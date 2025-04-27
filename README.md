@@ -5,5 +5,6 @@ https://education.clickdo.co.uk/wp-content/uploads/2024/08/trello-best-student-m
 
 
 Google app engine:::: 
-git clone https://github.com/GoogleCloudPlatform/python-docs-samples
-cd python-docs-samples/appengine/flexible/hello_world
+>>git clone https://github.com/GoogleCloudPlatform/python-docs-samples
+>>cd python-docs-samples/appengine/flexible/hello_world
+>>gcloud init
