@@ -1,0 +1,22 @@
+public class CalculatorController {
+    public Double value1 { get; set; }
+    public Double value2 { get; set; }
+    public String operator { get; set; }
+    public Double result { get; set; }
+
+    public void calculate() {
+        if(operator == '+') {
+            result = value1 + value2;
+        } else if(operator == '-') {
+            result = value1 - value2;
+        } else if(operator == '*') {
+            result = value1 * value2;
+        } else if(operator == '/') {
+            if(value2 != 0) {
+                result = value1 / value2;
+            } else {
+                result = null;
+            }
+        }
+    }
+}

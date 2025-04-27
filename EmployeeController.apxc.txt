@@ -1,0 +1,15 @@
+public with sharing class EmployeeController {
+    public List<Employee__c> employees { get; private set; }
+    public Employee__c newEmployee { get; set; }
+
+    public EmployeeController() {
+        employees = [SELECT EmployeeID__c, Name, Salary__c FROM Employee__c];
+        newEmployee = new Employee__c();
+    }
+
+    public void save() {
+        insert newEmployee;
+        employees.add(newEmployee);
+        newEmployee = new Employee__c();
+    }
+}

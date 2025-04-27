@@ -1,0 +1,24 @@
+<apex:page controller="StudentController">
+    <apex:form >
+        <apex:pageBlock title="Student Information">
+            <apex:pageBlockSection columns="2">
+                <apex:inputField value="{!newStudent.Name}" label="Name"/>
+                <apex:inputField value="{!newStudent.StudentID__c}" label="Student ID"/>
+                <apex:inputField value="{!newStudent.Age__c}" label="Age"/>
+                <apex:inputField value="{!newStudent.Course__c}" label="Course"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+
+        <apex:pageBlock title="Student Records">
+            <apex:pageBlockTable value="{!students}" var="s">
+                <apex:column value="{!s.Name}" headerValue="Name"/>
+                <apex:column value="{!s.StudentID__c}" headerValue="Student ID"/>
+                <apex:column value="{!s.Age__c}" headerValue="Age"/>
+                <apex:column value="{!s.Course__c}" headerValue="Course"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

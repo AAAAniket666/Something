@@ -1,0 +1,22 @@
+<apex:page controller="EmployeeController">
+    <apex:form >
+        <apex:pageBlock title="Employee Information">
+            <apex:pageBlockSection columns="2">
+                <apex:inputField value="{!newEmployee.Name}" label="Name"/>
+                <apex:inputField value="{!newEmployee.EmployeeID__c}" label="Employee ID"/>
+                <apex:inputField value="{!newEmployee.Salary__c}" label="Salary"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+
+        <apex:pageBlock title="Employee Records">
+            <apex:pageBlockTable value="{!employees}" var="e">
+                <apex:column value="{!e.Name}" headerValue="Name"/>
+                <apex:column value="{!e.EmployeeID__c}" headerValue="Employee ID"/>
+                <apex:column value="{!e.Salary__c}" headerValue="Salary"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

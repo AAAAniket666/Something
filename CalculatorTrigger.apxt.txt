@@ -1,0 +1,9 @@
+trigger CalculatorTrigger on Calculator__c (before insert, before update) {
+    for (Calculator__c rec : Trigger.new) {
+        if (rec.Operator__c == '+') rec.Result__c = rec.Value1__c + rec.Value2__c;
+        else if (rec.Operator__c == '-') rec.Result__c = rec.Value1__c - rec.Value2__c;
+        else if (rec.Operator__c == '*') rec.Result__c = rec.Value1__c * rec.Value2__c;
+        else if (rec.Operator__c == '/') rec.Result__c = 
+                rec.Value2__c != 0 ? rec.Value1__c / rec.Value2__c : null;
+    }
+}
